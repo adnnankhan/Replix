@@ -1,0 +1,14 @@
+{
+  "name": "replix-case-study",
+  "private": true,
+  "description": "Replix app case study: a static site (plain HTML, CSS and JS, no build step). The dev dependencies are only for the checks.",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "record": "node scripts/record-clips.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.13.0",
+    "playwright": "1.63.0"
+  }
+}

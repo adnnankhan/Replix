@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replix App Case Study</title>
+<meta name="description" content="I designed a desktop app that turns a developer's codebase into a demo video, planned before anything is recorded.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add("js");</script>
+<script src="config.js" defer></script>
+<script src="media/markers.js" defer></script>
+<script src="js/clips.js" defer></script>
+<script src="js/folds.js" defer></script>
+<script src="js/visuals.js" defer></script>
+</head>
+<body>
+<main id="main">
+
+<!-- TOP -->
+<header class="top col">
+  <a class="back mono" href="https://adnan.world">← adnan.world</a>
+  <p class="label mono">case study / replix · the app</p>
+  <h1>Replix: demo videos that come from your code, so they don't go stale after every release</h1>
+  <p class="lede">I designed a desktop app that turns a developer's codebase into a demo video, planned before anything is recorded.</p>
+  <p class="meta mono">concept prototype · desktop app · 2026 · 3–4 weeks · solo designer</p>
+  <a class="btn" data-prototype href="#">Try the prototype</a>
+</header>
+
+<!-- 01 · THE STORY -->
+<section class="section col" id="story" aria-labelledby="story-title">
+  <p class="label mono">01 · the story</p>
+  <h2 id="story-title">The demo is always one release behind</h2>
+  <div class="beats">
+    <div class="beat">
+      <p class="beat-label mono">who faces it</p>
+      <div class="beat-body">
+        <p>Sam builds and ships her product alone. There's no marketing team, so when launch day comes, the demo video is her job too.</p>
+      </div>
+    </div>
+    <div class="beat">
+      <p class="beat-label mono">the problem</p>
+      <div class="beat-body">
+        <ul class="moments">
+          <li>At 1:04 a.m. she's on take fourteen, because the cursor slipped again.</li>
+          <li>Two releases later, the demo on her homepage still shows the old dashboard.</li>
+          <li>A customer asks where a button is; it's in the video, but not in the app anymore.</li>
+          <li>The version that went live showed a real customer's email the whole time.</li>
+        </ul>
+        <p class="large-line">Every release makes the last demo a little more wrong, and the person who could fix it is busy shipping the next one.</p>
+        <p class="secondary">Teams already pay tools like Clueso $120–$200 a month to polish screen recordings, but every one of those tools still needs someone to record the screen first.</p>
+      </div>
+    </div>
+    <div class="beat">
+      <p class="beat-label mono">why I designed it this way</p>
+      <div class="beat-body">
+        <p>So I didn't design a better recorder. I designed Replix to start where Sam already is: her code. It runs on her machine with her own AI key, plans the video with her, and records only after she approves the plan. Tools like Clueso, Trupeer, Screen Studio, Arcade and Supademo compete on polishing recordings; Replix doesn't need one. The trade-off: a smaller audience, and a privacy promise I have to make checkable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · THE APP, SCREEN BY SCREEN -->
+<section class="section" id="screens" aria-labelledby="screens-title">
+  <div class="col">
+    <p class="label mono">02 · the app, screen by screen</p>
+    <h2 id="screens-title">Sam makes her demo in one sitting</h2>
+    <p>Each clip below is recorded from the working prototype.</p>
+  </div>
+
+  <article class="screen" id="screen-1" aria-labelledby="screen-1-title">
+    <div class="col">
+      <h3 id="screen-1-title">Start with the code, not a link</h3>
+      <div class="sam"><p class="sam-label mono">sam</p><p>It's late, and she doesn't want to set anything up. She just drags her project folder in.</p></div>
+    </div>
+    <figure class="clip wide" data-clip="clip-01">
+      <div class="frame"><video autoplay muted loop playsinline preload="metadata" poster="media/clip-01.jpg" aria-labelledby="screen-1-title"><source src="media/clip-01.mp4" type="video/mp4"><source src="media/clip-01.webm" type="video/webm"></video></div>
+      <ol class="marker-list mono"><li><span class="n">1</span> the dropzone</li><li><span class="n">2</span> "Already live? Paste your app link instead"</li><li><span class="n">3</span> "Start my demo"</li></ol>
+    </figure>
+    <dl class="explain col">
+      <div><dt class="mono">what it does</dt><dd>The developer drops their project folder (or a ZIP, or connects a repository) and presses "Start my demo".</dd></div>
+      <div><dt class="mono">why this way</dt><dd>A developer friend pointed out that when you're making a demo, the product usually isn't live yet. I chose code first and kept the link as a small fallback; getting the code running to record it is the hardest technical problem in the product. The button names the goal: a demo, not an analysis.</dd></div>
+    </dl>
+  </article>
+
+  <article class="screen" id="screen-2" aria-labelledby="screen-2-title">
+    <div class="col">
+      <h3 id="screen-2-title">Show what was understood before planning anything</h3>
+      <div class="sam"><p class="sam-label mono">sam</p><p>She watches the log fill line by line and wonders whether it really understood her app.</p></div>
+    </div>
+    <figure class="clip wide" data-clip="clip-02">
+      <div class="frame"><video autoplay muted loop playsinline preload="metadata" poster="media/clip-02.jpg" aria-labelledby="screen-2-title"><source src="media/clip-02.mp4" type="video/mp4"><source src="media/clip-02.webm" type="video/webm"></video></div>
+      <ol class="marker-list mono"><li><span class="n">1</span> the live log</li><li><span class="n">2</span> "14 screens · 8 features · 6 flows"</li><li><span class="n">3</span> star and hide</li></ol>
+    </figure>
+    <dl class="explain col">
+      <div><dt class="mono">what it does</dt><dd>A log fills line by line, then Replix shows the screens, features and flows it found. The developer stars what matters and hides what shouldn't appear.</dd></div>
+      <div><dt class="mono">why this way</dt><dd>This is the first moment of trust. Showing the understanding, and letting the developer correct it, comes before Replix plans anything.</dd></div>
+    </dl>
+  </article>
+
+  <article class="screen" id="screen-3" aria-labelledby="screen-3-title">
+    <div class="col">
+      <h3 id="screen-3-title">Suggest a plan, or just type one</h3>
+      <div class="sam"><p class="sam-label mono">sam</p><p>She isn't sure what video she even wants, only that it has to be ready by morning.</p></div>
+    </div>
+    <figure class="clip wide" data-clip="clip-03">
+      <div class="frame"><video autoplay muted loop playsinline preload="metadata" poster="media/clip-03.jpg" aria-labelledby="screen-3-title"><source src="media/clip-03.mp4" type="video/mp4"><source src="media/clip-03.webm" type="video/webm"></video></div>
+      <ol class="marker-list mono"><li><span class="n">1</span> suggestion cards</li><li><span class="n">2</span> length, format and purpose</li><li><span class="n">3</span> the "Next:" hint</li></ol>
+    </figure>
+    <dl class="explain col">
+      <div><dt class="mono">what it does</dt><dd>Replix suggests videos based on the product's features. The developer picks one, adjusts length and format, or describes the video in the chat.</dd></div>
+      <div><dt class="mono">why this way</dt><dd>A developer who isn't sure what video they want gets a starting point from their own product; one who knows can simply type it.</dd></div>
+    </dl>
+  </article>
+
+  <article class="screen" id="screen-4" aria-labelledby="screen-4-title">
+    <div class="col">
+      <h3 id="screen-4-title">See the whole video before anything is recorded</h3>
+      <div class="sam"><p class="sam-label mono">sam</p><p>This is where she relaxes: she can watch the whole video before a single second is recorded.</p></div>
+    </div>
+    <figure class="clip wide" data-clip="clip-04">
+      <div class="frame"><video autoplay muted loop playsinline preload="metadata" poster="media/clip-04.jpg" aria-labelledby="screen-4-title"><source src="media/clip-04.mp4" type="video/mp4"><source src="media/clip-04.webm" type="video/webm"></video></div>
+      <ol class="marker-list mono"><li><span class="n">1</span> live preview</li><li><span class="n">2</span> timeline of scenes</li><li><span class="n">3</span> per-scene controls</li><li><span class="n">4</span> "Create demo video"</li></ol>
+    </figure>
+    <dl class="explain col">
+      <div><dt class="mono">what it does</dt><dd>The plan plays in a live preview with every effect applied. Each scene has its own controls, and values Replix picked are marked "Set by Replix" until the developer changes them.</dd></div>
+      <div><dt class="mono">why this way</dt><dd>Recording is the slow, expensive part. I compared recording straight away, a plan as static cards and a plan with a live preview, and chose the live preview so problems get caught before recording, when fixing them is quick.</dd></div>
+    </dl>
+  </article>
+
+  <article class="screen" id="screen-5" aria-labelledby="screen-5-title">
+    <div class="col">
+      <h3 id="screen-5-title">One conversation from start to finish</h3>
+      <div class="sam"><p class="sam-label mono">sam</p><p>She never has to wonder where she is or what to press next.</p></div>
+    </div>
+    <figure class="clip wide" data-clip="clip-05">
+      <div class="frame"><video autoplay muted loop playsinline preload="metadata" poster="media/clip-05.jpg" aria-labelledby="screen-5-title"><source src="media/clip-05.mp4" type="video/mp4"><source src="media/clip-05.webm" type="video/webm"></video></div>
+      <ol class="marker-list mono"><li><span class="n">1</span> steps row in the chat</li><li><span class="n">2</span> a chat event line</li><li><span class="n">3</span> quick replies</li></ol>
+    </figure>
+    <dl class="explain col">
+      <div><dt class="mono">what it does</dt><dd>The chat is fixed on the left from the moment code is shared. Every action can be typed or clicked, and clicks appear in the chat as small event lines.</dd></div>
+      <div><dt class="mono">why this way</dt><dd>Early builds had a full page per step, and the next action was easy to miss. A pure chatbot would make editing slow. Chat plus canvas keeps one thread while still letting people work directly on the plan.</dd></div>
+    </dl>
+  </article>
+
+  <article class="screen" id="screen-6" aria-labelledby="screen-6-title">
+    <div class="col">
+      <h3 id="screen-6-title">Know it's working, then know what to do next</h3>
+      <div class="sam"><p class="sam-label mono">sam</p><p>She watches each scene tick by, so she knows it's working, then downloads the video and sees what to do next.</p></div>
+    </div>
+    <figure class="clip wide" data-clip="clip-06">
+      <div class="frame"><video autoplay muted loop playsinline preload="metadata" poster="media/clip-06.jpg" aria-labelledby="screen-6-title"><source src="media/clip-06.mp4" type="video/mp4"><source src="media/clip-06.webm" type="video/webm"></video></div>
+      <ol class="marker-list mono"><li><span class="n">1</span> progress log</li><li><span class="n">2</span> scene checkmarks</li><li><span class="n">3</span> Get other sizes</li><li><span class="n">4</span> Share a link</li><li><span class="n">5</span> Keep it up to date</li></ol>
+    </figure>
+    <dl class="explain col">
+      <div><dt class="mono">what it does</dt><dd>A log ticks through each scene while the video is made. After download, the ready screen offers other sizes, a private share link and keeping the demo up to date.</dd></div>
+      <div><dt class="mono">why this way</dt><dd>The download isn't the end of the developer's job; they made the video for a launch or a website. The ready screen helps them finish that job.</dd></div>
+    </dl>
+  </article>
+
+  <article class="screen" id="screen-7" aria-labelledby="screen-7-title">
+    <div class="col">
+      <h3 id="screen-7-title">When the code changes, fix the scene, not the whole video</h3>
+      <div class="sam"><p class="sam-label mono">sam</p><p>Two releases later her app changes, and this time she only has to fix one scene, not start over.</p></div>
+    </div>
+    <figure class="clip wide" data-clip="clip-07">
+      <div class="frame"><video autoplay muted loop playsinline preload="metadata" poster="media/clip-07.jpg" aria-labelledby="screen-7-title"><source src="media/clip-07.mp4" type="video/mp4"><source src="media/clip-07.webm" type="video/webm"></video></div>
+      <ol class="marker-list mono"><li><span class="n">1</span> the alert</li><li><span class="n">2</span> "What changed since last time"</li><li><span class="n">3</span> the versions list</li></ol>
+    </figure>
+    <dl class="explain col">
+      <div><dt class="mono">what it does</dt><dd>When the code changes, Replix says which scenes broke and shows the current and updated scene side by side. Approving saves a new version, and earlier versions stay.</dd></div>
+      <div><dt class="mono">why this way</dt><dd>A demo going stale is the problem Replix exists to solve. Updating one scene instead of remaking the video closes the loop back to the code.</dd></div>
+    </dl>
+  </article>
+</section>
+
+<!-- 03 · THE DETAIL -->
+<section class="section" id="detail" aria-labelledby="detail-label">
+  <div class="col">
+    <p class="label mono" id="detail-label">03 · the detail</p>
+  </div>
+
+  <div class="folds">
+    <!-- What I explored -->
+    <section class="fold" id="explored">
+      <h3 class="fold-h col"><button type="button" class="fold-btn" id="explored-btn" aria-expanded="false" aria-controls="explored-body">
+        <span class="fold-text"><span class="fold-title">What I explored before landing here</span><span class="fold-sum">Two parts of Replix took several attempts. Each attempt taught me something I kept.</span></span>
+        <span class="fold-icon mono" aria-hidden="true"></span>
+      </button></h3>
+      <div class="fold-body" id="explored-body" role="region" aria-labelledby="explored-btn"><div class="fold-inner">
+        <div class="col"><h4 id="onboarding-title">Onboarding</h4></div>
+        <div class="attempt">
+          <figure class="visual wide v1" data-visual aria-hidden="true">
+            <div class="v1-slide"><div class="v1-art"><span></span></div><div class="v1-bar w60"></div><div class="v1-bar w40 dim"></div><div class="v1-dots"><i class="on"></i><i></i><i></i></div><div class="v1-btn"></div></div>
+          </figure>
+          <dl class="tried col">
+            <div><dt class="mono">tried:</dt><dd>Centred illustrations across three slides.</dd></div>
+            <div><dt class="mono">why it didn't work:</dt><dd>It felt like any app's onboarding and showed nothing of how Replix works.</dd></div>
+            <div><dt class="mono">what I kept:</dt><dd>Three short screens, one idea each.</dd></div>
+          </dl>
+        </div>
+        <div class="attempt">
+          <figure class="visual wide v2" data-visual aria-hidden="true"><svg class="sphere" viewBox="-200 -200 400 400" data-sphere></svg></figure>
+          <dl class="tried col">
+            <div><dt class="mono">tried:</dt><dd>A 3D sphere of flowing strands.</dd></div>
+            <div><dt class="mono">why it didn't work:</dt><dd>Striking, but a sphere says nothing about code or video.</dd></div>
+            <div><dt class="mono">what I kept:</dt><dd>The 3D glass style, with every scene showing one real step of the product.</dd></div>
+          </dl>
+        </div>
+        <div class="attempt">
+          <figure class="clip wide" data-clip="clip-08">
+            <div class="frame"><video autoplay muted loop playsinline preload="metadata" poster="media/clip-08.jpg" aria-labelledby="onboarding-title"><source src="media/clip-08.mp4" type="video/mp4"><source src="media/clip-08.webm" type="video/webm"></video></div>
+          </figure>
+          <dl class="tried col">
+            <div><dt class="mono">final:</dt><dd>Code files scanned by a light sheet, screens merging into one video, then that video playing.</dd></div>
+          </dl>
+        </div>
+
+        <div class="col"><h4>Accent colour</h4></div>
+        <figure class="visual wide accents" data-visual>
+          <ul class="swatch-row" role="list">
+            <li><svg viewBox="0 0 200 120" role="img" aria-label="purple #7C5CFF"><rect width="200" height="120" rx="10" fill="#7C5CFF"/><rect x="34" y="44" width="132" height="32" rx="16" fill="#7C5CFF" stroke="rgba(255,255,255,.35)"/><text x="100" y="65" text-anchor="middle" fill="#fff" font-size="13" font-family="IBM Plex Sans, sans-serif" font-weight="500">Create demo video</text></svg><span class="mono">purple #7C5CFF</span></li>
+            <li><svg viewBox="0 0 200 120" role="img" aria-label="amber #F5B544"><rect width="200" height="120" rx="10" fill="#F5B544"/><rect x="34" y="44" width="132" height="32" rx="16" fill="#F5B544" stroke="rgba(255,255,255,.5)"/><text x="100" y="65" text-anchor="middle" fill="#fff" font-size="13" font-family="IBM Plex Sans, sans-serif" font-weight="500">Create demo video</text></svg><span class="mono">amber #F5B544</span></li>
+            <li><svg viewBox="0 0 200 120" role="img" aria-label="orchid #B25CFF, about 3.6:1"><rect width="200" height="120" rx="10" fill="#B25CFF"/><rect x="34" y="44" width="132" height="32" rx="16" fill="#B25CFF" stroke="rgba(255,255,255,.4)"/><text x="100" y="65" text-anchor="middle" fill="#fff" font-size="13" font-family="IBM Plex Sans, sans-serif" font-weight="500">Create demo video</text></svg><span class="mono">orchid #B25CFF (about 3.6:1)</span></li>
+            <li class="final"><svg viewBox="0 0 200 120" role="img" aria-label="deeper orchid #9B3FEF, about 4.8:1, final"><rect width="200" height="120" rx="10" fill="#9B3FEF"/><rect x="34" y="44" width="132" height="32" rx="16" fill="#9B3FEF" stroke="rgba(255,255,255,.4)"/><text x="100" y="65" text-anchor="middle" fill="#fff" font-size="13" font-family="IBM Plex Sans, sans-serif" font-weight="500">Create demo video</text></svg><span class="mono">deeper orchid #9B3FEF (about 4.8:1) · final</span></li>
+          </ul>
+        </figure>
+        <dl class="tried col">
+          <div><dt class="mono">tried:</dt><dd>Purple, then amber.</dd></div>
+          <div><dt class="mono">why it didn't work:</dt><dd>Purple read as the blue-violet many AI products share. Before committing to amber, I compared what tools like Runway, Linear, Descript and Loom actually use.</dd></div>
+          <div><dt class="mono">what I kept:</dt><dd>A monochrome interface with one joyful accent.</dd></div>
+        </dl>
+        <dl class="tried col">
+          <div><dt class="mono">tried:</dt><dd>Orchid #B25CFF.</dd></div>
+          <div><dt class="mono">why it didn't work:</dt><dd>White text on it reached only about 3.6:1 contrast.</dd></div>
+          <div><dt class="mono">what I kept:</dt><dd>The hue, deepened to #9B3FEF: about 4.8:1, used only on the main action of each screen.</dd></div>
+        </dl>
+      </div></div>
+    </section>
+
+    <!-- Design system -->
+    <section class="fold" id="design-system">
+      <h3 class="fold-h col"><button type="button" class="fold-btn" id="design-system-btn" aria-expanded="false" aria-controls="design-system-body">
+        <span class="fold-text"><span class="fold-title">Design system</span><span class="fold-sum">The user's product should be the most colourful thing on screen, so the interface stays quiet.</span></span>
+        <span class="fold-icon mono" aria-hidden="true"></span>
+      </button></h3>
+      <div class="fold-body" id="design-system-body" role="region" aria-labelledby="design-system-btn"><div class="fold-inner">
+        <figure class="visual wide palette" data-visual>
+          <ul class="chips" role="list">
+            <li><i style="background:#0F0F10"></i><span class="mono">background</span><span class="mono hex">#0F0F10</span></li>
+            <li><i style="background:#171718"></i><span class="mono">panel</span><span class="mono hex">#171718</span></li>
+            <li><i style="background:#202022"></i><span class="mono">surface</span><span class="mono hex">#202022</span></li>
+            <li><i style="background:#F2F2F2"></i><span class="mono">text</span><span class="mono hex">#F2F2F2</span></li>
+            <li><i style="background:rgba(242,242,242,.6)"></i><span class="mono">muted</span><span class="mono hex">60%</span></li>
+            <li><i style="background:#9B3FEF"></i><span class="mono">accent</span><span class="mono hex">#9B3FEF</span><span class="mono hex">hover #8C34E3</span><span class="mono hex">pressed #7B28CF</span></li>
+          </ul>
+        </figure>
+        <ul class="points col">
+          <li>One accent, one meaning. Only the main action uses the accent: Start my demo, Looks right, Create storyboard, Create demo video, Download. Selected items, tabs, progress bars and the playhead are white.</li>
+          <li>Capsules. Buttons, chips, segmented controls and inputs share one pill shape across every screen.</li>
+          <li>Glass for explanation, not for work. 3D glass appears only in onboarding; working screens stay flat.</li>
+          <li>Logo. Three stacked rounded rectangles, the front one with a play-shaped cutout: layers of screens becoming a video.</li>
+          <li>Accessibility and motion. WCAG AA contrast, visible focus, full keyboard use, checked at nine widths from 320px to 1920px. Animations run only while visible and respect reduced motion.</li>
+        </ul>
+        <!-- Values read from replix/src/styles/tokens.css: the --text-* styles in @theme and the --rx-space-* scale. -->
+        <figure class="visual wide system" data-visual>
+          <div class="specimen">
+            <p class="mono cap">type · system font (SF Pro) · tokens.css</p>
+            <ul role="list" data-type-scale>
+              <li data-style="large-title" data-size="28" data-lh="34" data-w="600"></li>
+              <li data-style="title1" data-size="24" data-lh="30" data-w="600"></li>
+              <li data-style="title2" data-size="22" data-lh="28" data-w="600"></li>
+              <li data-style="title3" data-size="18" data-lh="26" data-w="600"></li>
+              <li data-style="headline" data-size="15" data-lh="22" data-w="600"></li>
+              <li data-style="body" data-size="15" data-lh="22" data-w="400"></li>
+              <li data-style="callout" data-size="14" data-lh="20" data-w="400"></li>
+              <li data-style="subheadline" data-size="13" data-lh="18" data-w="400"></li>
+              <li data-style="footnote" data-size="12" data-lh="16" data-w="400"></li>
+              <li data-style="caption" data-size="11" data-lh="16" data-w="400"></li>
+            </ul>
+          </div>
+          <div class="ladder">
+            <p class="mono cap">spacing · 8pt grid · tokens.css</p>
+            <ul role="list" data-spacing>
+              <li data-name="inset" data-px="2"></li>
+              <li data-name="2xs" data-px="4"></li>
+              <li data-name="xs" data-px="6"></li>
+              <li data-name="sm" data-px="8"></li>
+              <li data-name="md" data-px="12"></li>
+              <li data-name="lg" data-px="16"></li>
+              <li data-name="xl" data-px="20"></li>
+              <li data-name="2xl" data-px="24"></li>
+              <li data-name="3xl" data-px="32"></li>
+              <li data-name="4xl" data-px="40"></li>
+              <li data-name="5xl" data-px="48"></li>
+              <li data-name="6xl" data-px="64"></li>
+              <li data-name="7xl" data-px="80"></li>
+              <li data-name="8xl" data-px="96"></li>
+            </ul>
+          </div>
+        </figure>
+      </div></div>
+    </section>
+
+    <!-- How I worked -->
+    <section class="fold" id="how-i-worked">
+      <h3 class="fold-h col"><button type="button" class="fold-btn" id="how-i-worked-btn" aria-expanded="false" aria-controls="how-i-worked-body">
+        <span class="fold-text"><span class="fold-title">How I worked and what I learned</span><span class="fold-sum">Claude Code wrote the code from my specs; the product, flows, interface, visual and copy decisions were mine.</span></span>
+        <span class="fold-icon mono" aria-hidden="true"></span>
+      </button></h3>
+      <div class="fold-body" id="how-i-worked-body" role="region" aria-labelledby="how-i-worked-btn"><div class="fold-inner col">
+        <p><span class="lead-in">How AI was used.</span> Claude Code wrote the code from my specs. I used Claude to research, compare options and pressure-test decisions with an LLM council. The product, flows, interface, visual and copy decisions were mine.</p>
+        <ul class="points">
+          <li>Specs, not suggestions. My early prompts left choices open ("for example", "if available"), and Claude Code filled the gaps with its own guesses. Once I wrote decisive specs, with exact values, exact copy and checks it had to pass, the builds matched the design. I started treating each prompt like a handoff spec for a developer.</li>
+          <li>Impressive isn't the same as clear. The sphere and a looping "mini reel" looked good in isolation but explained nothing. I kept only animations that teach one step of the product.</li>
+          <li>Positioning shapes every screen. Repositioning Replix for developers changed words on screens I thought were finished. Next time I'd map the category before designing the first screen.</li>
+        </ul>
+        <h4>What's next</h4>
+        <ul class="points">
+          <li>Get real code running to record it, the hardest technical question in the product.</li>
+          <li>Meet developers where they work: a command-line tool, a Git hook, and a Claude Code or Cursor plugin.</li>
+          <li>Make the privacy promise checkable by open-sourcing the local engine or recorder.</li>
+          <li>Validate demand with developers who ship their own products.</li>
+        </ul>
+      </div></div>
+    </section>
+
+    <!-- The full decisions -->
+    <section class="fold" id="decisions">
+      <h3 class="fold-h col"><button type="button" class="fold-btn" id="decisions-btn" aria-expanded="false" aria-controls="decisions-body">
+        <span class="fold-text"><span class="fold-title">The full decisions</span><span class="fold-sum">The four biggest decisions in full, with before and after.</span></span>
+        <span class="fold-icon mono" aria-hidden="true"></span>
+      </button></h3>
+      <div class="fold-body" id="decisions-body" role="region" aria-labelledby="decisions-btn"><div class="fold-inner">
+
+        <article class="decision">
+          <div class="col">
+            <h4>Why I made Replix a developer tool instead of another launch-demo tool</h4>
+            <p><span class="lead-in">Hook.</span> When I mapped the AI product-demo tools, the answer was uncomfortable: turning a product into a polished demo video is, broadly, a solved problem.</p>
+            <p><span class="lead-in">Before.</span> My first framing was "turn the feature you just shipped into a polished launch demo", and the landing page said "Product demos, without recording a thing."</p>
+          </div>
+          <div class="ba wide" data-visual>
+            <figure><div class="mock hero-mock"><p class="hero-line">Product demos, without recording a thing.</p></div><figcaption class="mono">Before</figcaption></figure>
+            <figure><div class="mock hero-mock after"><p class="hero-line">You shipped it. Replix shows it.</p></div><figcaption class="mono">After</figcaption></figure>
+          </div>
+          <div class="col">
+            <p><span class="lead-in">Turning point.</span> Compete on features (a race on established tools' ground), pitch an abstraction ("a demonstration layer for software"; nobody downloads an abstraction), or change who it's for and how it's delivered (smaller audience, a privacy promise to make checkable, unproven willingness to pay). I chose the third, because every tool I checked starts from a screen recording.</p>
+            <p><span class="lead-in">What I did next.</span> Narrowed V1 to one path, renamed the interface in words a developer would use, and set the headline direction "You shipped it. Replix shows it."</p>
+            <p><span class="lead-in">Result.</span> Replix aims at a category it can realistically lead: demo videos made from the code, by the person who wrote it.</p>
+          </div>
+        </article>
+
+        <article class="decision">
+          <div class="col">
+            <h4>Why the codebase comes first</h4>
+            <p><span class="lead-in">Hook.</span> A developer friend said it plainly: when you're making a demo, the product usually isn't live yet.</p>
+            <p><span class="lead-in">Before.</span> The share screen led with a URL field; the code options were a small, optional row.</p>
+          </div>
+          <div class="ba wide" data-visual>
+            <figure><div class="mock app share-mock">
+              <div class="sk-title"></div><div class="sk-line"></div>
+              <div class="url-field"><span>https://yourapp.com…</span></div>
+              <div class="opt-row"><span class="opt">optional</span><i></i><i></i><i></i></div>
+              <div class="mock-actions"><span class="mock-btn">Analyze my product</span></div>
+            </div><figcaption class="mono">Before</figcaption></figure>
+            <figure><div class="mock still"><img src="media/clip-01.jpg" alt="" loading="lazy" width="1440" height="900"></div><figcaption class="mono">After</figcaption></figure>
+          </div>
+          <div class="col">
+            <p><span class="lead-in">Turning point.</span> URL first is easiest to film but shuts out everything not yet deployed. Code first works before launch, at the cost of the hardest technical problem: running the code to record it. I chose code first, with the link as a fallback.</p>
+            <p><span class="lead-in">What I did next.</span> A large dropzone, repositories in a row below it, the URL as a small link, and "Start my demo" instead of "Analyze my product".</p>
+            <p><span class="lead-in">Result.</span> The first screen matches who the product is for.</p>
+          </div>
+        </article>
+
+        <article class="decision">
+          <div class="col">
+            <h4>Why nothing is recorded until the plan is approved</h4>
+            <p><span class="lead-in">Hook.</span> Recording is the slow, expensive part.</p>
+            <p><span class="lead-in">Before.</span> The original idea was a straight line from prompt to recording; the first storyboard was a row of static cards.</p>
+          </div>
+          <div class="ba wide" data-visual>
+            <figure><div class="mock app cards-mock">
+              <div class="sk-title"></div>
+              <ol class="scene-cards"><li><span class="thumb"></span><span class="t">Cold open</span><i></i><i class="s"></i></li><li><span class="thumb"></span><span class="t">Boards in motion</span><i></i><i class="s"></i></li><li><span class="thumb"></span><span class="t">See the whole plan</span><i></i><i class="s"></i></li><li><span class="thumb"></span><span class="t">Launch card</span><i></i><i class="s"></i></li></ol>
+            </div><figcaption class="mono">Before</figcaption></figure>
+            <figure><div class="mock still"><img src="media/clip-04.jpg" alt="" loading="lazy" width="1440" height="900"></div><figcaption class="mono">After</figcaption></figure>
+          </div>
+          <div class="col">
+            <p><span class="lead-in">Turning point.</span> Record straight away, plan as cards, or plan with a live preview. I chose the live preview, so problems are caught before recording.</p>
+            <p><span class="lead-in">What I did next.</span> "Storyboard" became "Video plan", with a live preview, a timeline, per-scene controls marked "Set by Replix", and "Add scene".</p>
+            <p><span class="lead-in">Result.</span> The only button that records comes after the user is happy with the plan.</p>
+          </div>
+        </article>
+
+        <article class="decision">
+          <div class="col">
+            <h4>Why the chat never leaves the screen</h4>
+            <p><span class="lead-in">Hook.</span> Clicking through the early build, I kept asking: where am I, and what do I press next?</p>
+            <p><span class="lead-in">Before.</span> A full page per step, a stepper across the top, and a chat that appeared only halfway through.</p>
+          </div>
+          <div class="ba wide" data-visual>
+            <figure><div class="mock app wizard-mock">
+              <ol class="stepper"><li class="done"><b>1</b><i></i></li><li class="done"><b>2</b><i></i></li><li class="on"><b>3</b><i></i></li><li><b>4</b><i></i></li><li><b>5</b><i></i></li></ol>
+              <div class="page"><div class="sk-title"></div><div class="sk-line"></div><div class="sk-grid"><i></i><i></i><i></i><i></i></div><div class="mock-actions"><span class="mock-btn ghost"></span></div></div>
+            </div><figcaption class="mono">Before</figcaption></figure>
+            <figure><div class="mock still"><img src="media/clip-05.jpg" alt="" loading="lazy" width="1440" height="900"></div><figcaption class="mono">After</figcaption></figure>
+          </div>
+          <div class="col">
+            <p><span class="lead-in">Turning point.</span> A wizard loses context, a pure chatbot makes editing slow, and chat plus canvas keeps one thread with direct editing. I chose chat plus canvas.</p>
+            <p><span class="lead-in">What I did next.</span> The chat is fixed on the left, the steps live inside it, clicks are echoed as chat lines, answers appear as quick replies, and each step has one highlighted button.</p>
+            <p><span class="lead-in">Result.</span> One screen from shared code to downloaded video, always with one clear next step.</p>
+          </div>
+        </article>
+      </div></div>
+    </section>
+  </div>
+</section>
+
+<!-- 04 · TRY IT -->
+<section class="section col tryit" id="try-it" aria-labelledby="try-title">
+  <p class="label mono">04 · try it</p>
+  <h2 id="try-title">Go from shared code to a finished demo in a few minutes</h2>
+  <p>The prototype runs on sample data.</p>
+  <a class="btn" data-prototype href="#">Try the prototype</a>
+</section>
+</main>
+
+<footer class="footer col">
+  <p class="small mono">next · replix, the landing page</p>
+  <p class="small mono">adnan asif khan · <a href="mailto:adnanasifkhan24@gmail.com">adnanasifkhan24@gmail.com</a> · <a href="https://adnan.world">adnan.world</a></p>
+</footer>
+</body>
+</html>
